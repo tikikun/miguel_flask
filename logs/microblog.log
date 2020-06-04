@@ -116,3 +116,5 @@ Traceback (most recent call last):
     return type.__call__(cls, *args, **kwargs)
 TypeError: __init__() missing 1 required positional argument: 'original_username'
 2020-06-03 20:54:16,882 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
+2020-06-04 21:55:08,440 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
+2020-06-04 21:55:15,870 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
