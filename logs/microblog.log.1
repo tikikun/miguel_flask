@@ -1,4 +1,4 @@
-2020-06-06 13:38:58,290 ERROR: Exception on /user/susan [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
+2020-06-07 09:24:10,140 ERROR: Exception on /user/tuandao [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,28 +14,20 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 44, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %} {% block content %}
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/base.html", line 28, in top-level template code
-    {% endif %} {% endwith %} {% block content %}{% endblock %}
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 20, in block "content"
-    <form action="{{url_for('follow',username=user.username)}}" method="POST">
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/helpers.py", line 318, in url_for
-    if endpoint[:1] == ".":
-jinja2.exceptions.UndefinedError: 'follow' is undefined
-2020-06-06 13:38:58,433 ERROR: Exception on /user/susan [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 63, in user
+    if posts.has_next else None
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['page']. Did you forget to specify values ['username']?
+2020-06-07 09:24:47,623 ERROR: Exception on /user/tuandao [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -51,29 +43,21 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 44, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %} {% block content %}
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/base.html", line 28, in top-level template code
-    {% endif %} {% endwith %} {% block content %}{% endblock %}
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 20, in block "content"
-    <form action="{{url_for('follow',username=user.username)}}" method="POST">
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/helpers.py", line 318, in url_for
-    if endpoint[:1] == ".":
-jinja2.exceptions.UndefinedError: 'follow' is undefined
-2020-06-06 13:39:02,228 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
-2020-06-06 13:39:03,396 ERROR: Exception on /user/susan [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 63, in user
+    if posts.has_next else None
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['page']. Did you forget to specify values ['username']?
+2020-06-07 09:28:00,649 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
+2020-06-07 09:28:04,284 ERROR: Exception on /user/tuandao [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -89,22 +73,45 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 44, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %} {% block content %}
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/base.html", line 28, in top-level template code
-    {% endif %} {% endwith %} {% block content %}{% endblock %}
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 21, in block "content"
-    {{form.hidden_tage()}} {{form.submit(value='Follow')}}
-jinja2.exceptions.UndefinedError: 'app.forms.EmptyForm object' has no attribute 'hidden_tage'
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 63, in user
+    if posts.has_next else None
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['page']. Did you forget to specify values ['username']?
+2020-06-07 09:28:05,127 ERROR: Exception on /user/tuandao [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 63, in user
+    if posts.has_next else None
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['page']. Did you forget to specify values ['username']?

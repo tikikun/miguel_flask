@@ -1,4 +1,4 @@
-2020-06-06 13:38:57,342 ERROR: Exception on /user/susan [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
+2020-06-07 09:14:31,746 ERROR: Exception on /index [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,28 +14,29 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 44, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 31, in index
+    prev_url=prev_url)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
     reraise(*rewrite_traceback_stack(source=source))
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %} {% block content %}
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/base.html", line 28, in top-level template code
-    {% endif %} {% endwith %} {% block content %}{% endblock %}
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 20, in block "content"
-    <form action="{{url_for('follow',username=user.username)}}" method="POST">
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/helpers.py", line 318, in url_for
-    if endpoint[:1] == ".":
-jinja2.exceptions.UndefinedError: 'follow' is undefined
-2020-06-06 13:38:57,380 ERROR: Exception on /user/susan [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/index.html", line 22, in template
+    <a href="{{ prev url }}">Newer posts</a>
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got 'url'
+2020-06-07 09:15:40,809 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
+2020-06-07 09:15:45,680 ERROR: Exception on /index [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -51,28 +52,28 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 44, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 31, in index
+    prev_url=prev_url)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
     reraise(*rewrite_traceback_stack(source=source))
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %} {% block content %}
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/base.html", line 28, in top-level template code
-    {% endif %} {% endwith %} {% block content %}{% endblock %}
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 20, in block "content"
-    <form action="{{url_for('follow',username=user.username)}}" method="POST">
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/helpers.py", line 318, in url_for
-    if endpoint[:1] == ".":
-jinja2.exceptions.UndefinedError: 'follow' is undefined
-2020-06-06 13:38:57,509 ERROR: Exception on /user/susan [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/index.html", line 18, in template
+    {% for post in posts %} {% include '_post.html' %} {% endfor %}
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2020-06-07 09:15:46,555 ERROR: Exception on /index [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -88,24 +89,24 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 44, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 31, in index
+    prev_url=prev_url)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
     reraise(*rewrite_traceback_stack(source=source))
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %} {% block content %}
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/base.html", line 28, in top-level template code
-    {% endif %} {% endwith %} {% block content %}{% endblock %}
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 20, in block "content"
-    <form action="{{url_for('follow',username=user.username)}}" method="POST">
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/helpers.py", line 318, in url_for
-    if endpoint[:1] == ".":
-jinja2.exceptions.UndefinedError: 'follow' is undefined
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/index.html", line 18, in template
+    {% for post in posts %} {% include '_post.html' %} {% endfor %}
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
