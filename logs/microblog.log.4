@@ -1,4 +1,5 @@
-2020-06-06 13:39:13,004 ERROR: Exception on /user/susan [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
+2020-06-06 13:37:29,169 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
+2020-06-06 13:38:07,712 ERROR: Exception on /user/susan [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -30,14 +31,12 @@ Traceback (most recent call last):
     {% extends "base.html" %} {% block content %}
   File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/base.html", line 28, in top-level template code
     {% endif %} {% endwith %} {% block content %}{% endblock %}
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 21, in block "content"
-    {{form.hidden_tage()}} {{form.submit(value='Follow')}}
-jinja2.exceptions.UndefinedError: 'app.forms.EmptyForm object' has no attribute 'hidden_tage'
-2020-06-06 13:39:44,242 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
-2020-06-06 13:42:07,787 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
-2020-06-06 15:07:48,366 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
-2020-06-06 15:09:10,982 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
-2020-06-06 15:09:16,987 ERROR: Exception on / [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 20, in block "content"
+    <form action="{{url_for(follow,username=user.username)}}" method="POST">
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/helpers.py", line 318, in url_for
+    if endpoint[:1] == ".":
+jinja2.exceptions.UndefinedError: 'follow' is undefined
+2020-06-06 13:38:56,098 ERROR: Exception on /user/susan [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -53,12 +52,28 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 22, in index
-    posts = current_user.followed_posts.all()
-AttributeError: 'function' object has no attribute 'all'
-2020-06-06 15:10:24,728 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
-2020-06-06 15:22:48,094 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
-2020-06-06 15:23:10,068 ERROR: Exception on /explore [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 44, in user
+    return render_template('user.html', user=user, posts=posts, form=form)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %} {% block content %}
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/base.html", line 28, in top-level template code
+    {% endif %} {% endwith %} {% block content %}{% endblock %}
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 20, in block "content"
+    <form action="{{url_for('follow',username=user.username)}}" method="POST">
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/helpers.py", line 318, in url_for
+    if endpoint[:1] == ".":
+jinja2.exceptions.UndefinedError: 'follow' is undefined
+2020-06-06 13:38:56,998 ERROR: Exception on /user/susan [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -72,25 +87,26 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 36, in explore
-    posts = Post.query.order_by(Post.timestamp.desc).all()
-  File "<string>", line 2, in order_by
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/sqlalchemy/orm/base.py", line 227, in generate
-    fn(self, *args[1:], **kw)
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 1920, in order_by
-    criterion = self._adapt_col_list(criterion)
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 342, in _adapt_col_list
-    for o in cols
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 342, in <listcomp>
-    for o in cols
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 4647, in _literal_as_label_reference
-    return _literal_as_text(element)
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 4690, in _literal_as_text
-    return _literal_as(element, _no_text_coercion)
-  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 4682, in _literal_as
-    "instead" % type(element)
-sqlalchemy.exc.ArgumentError: SQL expression object expected, got object of type <class 'method'> instead
-2020-06-06 15:25:44,307 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
-2020-06-06 15:28:05,235 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
-2020-06-06 15:28:26,414 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
-2020-06-06 15:34:46,730 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/routes.py", line 44, in user
+    return render_template('user.html', user=user, posts=posts, form=form)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %} {% block content %}
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/base.html", line 28, in top-level template code
+    {% endif %} {% endwith %} {% block content %}{% endblock %}
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/user.html", line 20, in block "content"
+    <form action="{{url_for('follow',username=user.username)}}" method="POST">
+  File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/helpers.py", line 318, in url_for
+    if endpoint[:1] == ".":
+jinja2.exceptions.UndefinedError: 'follow' is undefined
