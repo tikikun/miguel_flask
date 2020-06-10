@@ -1,4 +1,4 @@
-2020-06-07 09:12:51,741 ERROR: Exception on / [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
+2020-06-07 09:12:57,914 ERROR: Exception on /index [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -35,7 +35,8 @@ Traceback (most recent call last):
   File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/index.html", line 17, in template
     if prev_url %} <a href="{{prev url}}">Newer posts</a> {% endif %} {% if next_url
 jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got 'url'
-2020-06-07 09:12:51,999 ERROR: Exception on / [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
+2020-06-07 09:13:54,986 INFO: Microblog startup [in /home/daomaster/Desktop/venv/miguel_flask/app/__init__.py:43]
+2020-06-07 09:13:56,970 ERROR: Exception on /index [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -69,10 +70,10 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/index.html", line 17, in template
-    if prev_url %} <a href="{{prev url}}">Newer posts</a> {% endif %} {% if next_url
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/index.html", line 20, in template
+    <a href="{{ prev url }}">Newer posts</a>
 jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got 'url'
-2020-06-07 09:12:52,089 ERROR: Exception on / [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
+2020-06-07 09:13:58,144 ERROR: Exception on /index [GET] [in /home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -106,6 +107,6 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "/home/daomaster/Desktop/venv/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/index.html", line 17, in template
-    if prev_url %} <a href="{{prev url}}">Newer posts</a> {% endif %} {% if next_url
+  File "/home/daomaster/Desktop/venv/miguel_flask/app/templates/index.html", line 20, in template
+    <a href="{{ prev url }}">Newer posts</a>
 jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got 'url'
